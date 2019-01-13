@@ -1,2 +1,2 @@
 # conferences-md
-First IT events aggregator in Modova Republic
+First IT events aggregator in Moldova Republic
