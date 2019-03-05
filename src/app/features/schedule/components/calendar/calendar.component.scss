@@ -1,0 +1,75 @@
+@import "~@angular-mdc/theme/material";
+@import "../../../../../theme/colors";
+
+.calendar {
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
+
+.calendar-card {
+  padding: 15px;
+  margin-top: 80px;
+  min-height: 500px;
+
+  @include mdc-card-shape-radius(24px 24px);
+
+  @include mdc-rtl {
+    @include mdc-card-shape-radius(24px 24px);
+  }
+
+  .filters {
+    padding-top: 10px;
+    margin-left: 15px;
+  }
+
+  .month-name {
+    color: $mdc-theme-secondary;
+    margin-left: 15px;
+  }
+
+  .month {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .event {
+      padding: 15px;
+      margin: 10px;
+      border: 1px solid rgba(84, 94, 111, 0.1);
+      border-radius: 10px;
+
+      .event-name {
+        margin: 0px;
+        color: #3a3a3a;
+        font-weight: 400;
+      }
+
+      .event-date {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #818181;
+        font-weight: 600;
+      }
+    }
+
+    .event:hover {
+      cursor: pointer;
+      background: #d4e5ee26;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .month {
+      grid-template-columns: 100%;
+    }
+  }
+}
+
+.loader {
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

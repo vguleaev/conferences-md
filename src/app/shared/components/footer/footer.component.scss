@@ -1,0 +1,59 @@
+.tooltip {
+  padding: 4px 8px;
+  background: white;
+  color: black;
+  border-radius: 4px;
+  margin: 8px;
+  font-size: 12px;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+footer {
+  height: 200px;
+  color: white;
+  background: #383838;
+
+  .footer-content {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .technologies {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+
+  .logo-img {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+  }
+
+  .ang-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0px;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .author-link {
+    text-decoration: none;
+    color: white;
+  }
+
+  .author-link:hover {
+    text-decoration: underline;
+  }
+}

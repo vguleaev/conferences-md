@@ -1,0 +1,12 @@
+.banner {
+    display: flex;
+    flex-flow: row wrap;
+  
+    .banner-text {
+      max-width: 650px;
+    }
+
+    button {
+        margin: 5px;
+      }
+  }

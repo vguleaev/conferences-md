@@ -1,0 +1,10 @@
+@import "~@angular-mdc/theme/material";
+@import "../../../../../theme/colors";
+
+.main-content {
+  padding-top: 64px;
+  overflow: hidden;
+  position: relative;
+  min-height: calc(100% - 200px - 64px);
+  overflow-x: hidden;
+}

@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+  
+  <div #mainContent class="main-content">
+    <div class="container">
+      <app-banner></app-banner>
+      <app-calendar [months]="months" [isLoading]="areEventsLoading"></app-calendar>
+    </div>
+    <app-bubbles></app-bubbles>
+  </div>
+  
+  <app-footer></app-footer>

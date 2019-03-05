@@ -1,0 +1,32 @@
+.bubble-1 {
+  position: absolute;
+  z-index: -2;
+  top: -250px;
+  left: -200px;
+  height: 800px;
+  width: 800px;
+  background: linear-gradient(-54deg, #63edfb 0%, #ff5acd 94%);
+  border-radius: 60%;
+}
+
+.bubble-2 {
+  position: absolute;
+  z-index: -2;
+  top: 50px;
+  left: 80%;
+  height: 800px;
+  width: 800px;
+  background: linear-gradient(-54deg, #63edfb 0%, #ff5acd 94%);
+  border-radius: 60%;
+}
+
+.bubble-3 {
+  position: absolute;
+  z-index: -2;
+  bottom: -400px;
+  left: -400px;
+  height: 800px;
+  width: 800px;
+  background: linear-gradient(-54deg, #63edfb 0%, #ff5acd 94%);
+  border-radius: 60%;
+}

@@ -1,0 +1,14 @@
+
+@import "theme/colors";
+@import "theme/global";
+@import "~@angular-mdc/theme/material";
+
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+}

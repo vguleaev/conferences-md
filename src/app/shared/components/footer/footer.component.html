@@ -1,0 +1,74 @@
+<footer>
+  <div class="container footer-content">
+    <p>Copyright © 2019</p>
+    <p class="description">
+      Built with Angular & Firebase by <a class="author-link" href="https://www.linkedin.com/in/vladislav-guleaev-15503914a/">Vladislav Guleaev</a>
+    </p>
+    <div class="technologies">
+      <img
+        class="logo-img ang-img"
+        [satPopoverAnchorFor]="angularToolTip"
+        (mouseenter)="angularToolTip.open()"
+        (mouseleave)="angularToolTip.close()"
+        src="https://cdn3.iconfinder.com/data/icons/logos-3/250/angular-512.png"
+      />
+      <img
+        class="logo-img"
+        [satPopoverAnchorFor]="materialToolTip"
+        (mouseenter)="materialToolTip.open()"
+        (mouseleave)="materialToolTip.close()"
+        src="https://material.io/tools/icons/static/ic_material_192px_light.svg"
+      />
+      <img
+        class="logo-img"
+        [satPopoverAnchorFor]="firebaseToolTip"
+        (mouseenter)="firebaseToolTip.open()"
+        (mouseleave)="firebaseToolTip.close()"
+        src="https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-512.png"
+      />
+      <img
+        class="logo-img"
+        [satPopoverAnchorFor]="functionsTooltip"
+        (mouseenter)="functionsTooltip.open()"
+        (mouseleave)="functionsTooltip.close()"
+        src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/google-cloud-functions.png"
+      />
+
+      <sat-popover
+        #angularToolTip
+        verticalAlign="above"
+        horizontalAlign="center"
+        autoFocus="false"
+      >
+        <div class="tooltip">Angular</div>
+      </sat-popover>
+
+      <sat-popover
+        #materialToolTip
+        verticalAlign="above"
+        horizontalAlign="center"
+        autoFocus="false"
+      >
+        <div class="tooltip">Google Material Design</div>
+      </sat-popover>
+
+      <sat-popover
+        #firebaseToolTip
+        verticalAlign="above"
+        horizontalAlign="center"
+        autoFocus="false"
+      >
+        <div class="tooltip">Firebase Hosting & Database</div>
+      </sat-popover>
+
+      <sat-popover
+        #functionsTooltip
+        verticalAlign="above"
+        horizontalAlign="center"
+        autoFocus="false"
+      >
+        <div class="tooltip">Google Cloud Functions</div>
+      </sat-popover>
+    </div>
+  </div>
+</footer>
