@@ -1,7 +1,5 @@
 {
-    "cSpell.words": [
-        "Guleaev",
-        "Injectable",
-        "Vladislav"
-    ]
+  "editor.formatOnSave": true,
+  "tslint.autoFixOnSave": true,
+  "cSpell.words": ["Guleaev", "Injectable", "Vladislav"]
 }

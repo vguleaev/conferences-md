@@ -1,11 +1,11 @@
-<app-navbar></app-navbar>
-  
-  <div #mainContent class="main-content">
-    <div class="container">
-      <app-banner></app-banner>
-      <app-calendar [months]="months" [isLoading]="areEventsLoading"></app-calendar>
-    </div>
-    <app-bubbles></app-bubbles>
+<app-navbar (clickProjectMission)="onProjectMissionClick()"></app-navbar>
+
+<div #mainContent class="main-content">
+  <div class="container">
+    <app-banner (addEvent)="onAddEvent()" (clickContactUs)="onContactUsClick()"></app-banner>
+    <app-calendar [months]="months" [isLoading]="areEventsLoading" (clickEvent)="onEventClick($event)"></app-calendar>
   </div>
-  
-  <app-footer></app-footer>
+  <app-bubbles></app-bubbles>
+</div>
+
+<app-footer></app-footer>

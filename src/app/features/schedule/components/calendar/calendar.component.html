@@ -1,22 +1,22 @@
 <div class="calendar">
-    <mdc-card mdcElevation="6" class="calendar-card">
-      <div class="filters">
-        Show: All • Conferences • Meetups • Workshops
-      </div>
-      
-      <app-loader *ngIf="isLoading" class="loader"></app-loader>
+  <mdc-card mdcElevation="6" class="calendar-card">
+    <div class="filters">
+      Show: All • Conferences • Meetups • Workshops
+    </div>
 
-      <div class="events-list" *ngFor="let month of months">
-        <div class="month-name">
-          <h3>{{ month.name }}</h3>
-        </div>
+    <app-loader *ngIf="isLoading" class="loader"></app-loader>
 
-        <div class="month">
-          <div *ngFor="let event of month.events" class="event">
-            <h4 class="event-name">{{ event.name }}</h4>
-            <p class="event-date">{{ event.date }}</p>
-          </div>
+    <div class="events-list" *ngFor="let month of months">
+      <div class="month-name">
+        <h3>{{ month.name }}</h3>
+      </div>
+
+      <div class="month">
+        <div *ngFor="let event of month.events" class="event" (click)="onClickEvent(event)">
+          <h4 class="event-name">{{ event.name }}</h4>
+          <p class="event-date">{{ event.date }}</p>
         </div>
       </div>
-    </mdc-card>
-  </div>
+    </div>
+  </mdc-card>
+</div>

@@ -25,3 +25,27 @@
     margin-right: 5%;
   }
 }
+
+.modal-dialog {
+  width: 40%;
+}
+
+.small-modal-dialog {
+  width: 20%;
+}
+
+@media only screen and (max-width: 1650px) {
+  .small-modal-dialog {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .modal-dialog {
+    width: 90%;
+  }
+
+  .small-modal-dialog {
+    width: 90%;
+  }
+}
