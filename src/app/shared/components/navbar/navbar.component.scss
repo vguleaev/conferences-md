@@ -1,19 +1,12 @@
-.demo-top-app-bar-with-tabs {
-  color: black;
-  background-color: #36364000;
 
-  .mdc-tab-bar {
-    margin-top: 1em;
+.toolbar {
+  position: absolute;
+  background: transparent;
+  color: #000000c9;
+  z-index: 2;
 
-    @media (max-width: 599px) {
-      margin-top: 0.5em;
-    }
-  }
-}
-
-::ng-deep mdc-top-app-bar-section {
-  mdc-icon {
-    color: black;
+  .spacer {
+    flex: 1 1 auto;
   }
 }
 
@@ -26,10 +19,6 @@
     font-size: 20px;
     margin-right: 5px;
   }
-}
-
-::ng-deep .mdc-top-app-bar__title {
-  padding-left: 0px;
 }
 
 @media only screen and (max-width: 800px) {
