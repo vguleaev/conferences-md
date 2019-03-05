@@ -7,12 +7,12 @@ import { EventsService } from './../../../../core/services/events.service';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  months: any[] = [];
-  areEventsLoading: boolean;
+  public months: any[] = [];
+  public areEventsLoading: boolean;
 
-  constructor(private eventsService: EventsService) { }
+  constructor(private eventsService: EventsService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.areEventsLoading = true;
 
     this.eventsService.get().subscribe(events => {

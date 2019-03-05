@@ -7,11 +7,9 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoaderComponent implements OnInit {
-  @Input() message = 'Loading...';
-  
-  constructor() { }
+  @Input() public message = 'Loading...';
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  public ngOnInit() {}
 }
