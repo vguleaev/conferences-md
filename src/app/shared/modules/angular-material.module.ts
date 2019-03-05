@@ -100,4 +100,3 @@ import {
   providers: []
 })
 export class AngularMaterialModule {}
-

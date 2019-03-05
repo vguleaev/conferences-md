@@ -1,6 +1,6 @@
-import { NgModule, SkipSelf, Optional } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { EventsService } from "./services/events.service";
+import { NgModule, SkipSelf, Optional } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { EventsService } from './services/events.service';
 
 @NgModule({
   declarations: [],
@@ -14,9 +14,7 @@ export class CoreModule {
     parentModule: CoreModule
   ) {
     if (parentModule) {
-      throw new Error(
-        "CoreModule is already loaded. Import it in the AppModule only"
-      );
+      throw new Error('CoreModule is already loaded. Import it in the AppModule only');
     }
   }
 }

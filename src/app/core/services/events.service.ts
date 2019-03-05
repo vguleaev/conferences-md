@@ -5,7 +5,7 @@ import { delay } from 'rxjs/operators';
 
 @Injectable()
 export class EventsService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public get(): Observable<any> {
     const months = [

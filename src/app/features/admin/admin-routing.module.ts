@@ -5,12 +5,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '**', redirectTo: '', }
+  { path: '**', redirectTo: '' }
   // { path: 'secure', component: SecuredComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}
