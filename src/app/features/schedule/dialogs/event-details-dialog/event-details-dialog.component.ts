@@ -7,9 +7,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./event-details-dialog.component.scss']
 })
 export class EventDetailsDialogComponent implements OnInit {
-  public event: object;
+  public event: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { event: object }, private dialogRef: MatDialogRef<EventDetailsDialogComponent>) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { event: any }, private dialogRef: MatDialogRef<EventDetailsDialogComponent>) {
     if (data && data.event) {
       this.event = data.event;
     } else {
