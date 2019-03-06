@@ -27,7 +27,8 @@
 }
 
 .modal-dialog {
-  width: 40%;
+  width: 45%;
+  max-width: 95vw;
 }
 
 .small-modal-dialog {
@@ -42,10 +43,21 @@
 
 @media only screen and (max-width: 580px) {
   .modal-dialog {
-    width: 90%;
+    max-width: 95vw !important;
+    width: 95%;
   }
 
   .small-modal-dialog {
     width: 90%;
+  }
+}
+
+a {
+  color: $blue-3;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.5s ease;
+  &:hover {
+    color: $blue-2;
   }
 }

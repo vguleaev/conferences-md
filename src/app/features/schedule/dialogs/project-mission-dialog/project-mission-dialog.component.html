@@ -1,3 +1,23 @@
-<p>
-  project-mission-dialog works!
-</p>
+<h2 mat-dialog-title><i class="fas fa-rocket"></i> Project Mission</h2>
+
+<mat-dialog-content>
+  <p><span class="bold">Conferences MD Online</span> - is an open-source, community-driven and absolutely non-profit project.</p>
+  <p>This is a place where you can easy find IT events in Moldova. We carefully collected them right here.</p>
+
+  <div class="mission-message">
+    <p>Our mission is to support Moldova tech community. Enjoy!</p>
+    <mat-icon>tag_faces</mat-icon>
+  </div>
+
+  <div class="divider"></div>
+  <p>We are open to suggestions how to improve our service, so don't hesitate to contact us.</p>
+  <p>
+    Moreover, who is interested in project development can easy create a pull request at
+    <img class="github-logo" src="https://image.flaticon.com/icons/png/128/25/25231.png" height="20" width="20" />
+    <a class="bold" target="_blank" href="https://github.com/vguleaev/conferences-md">GitHub.</a>
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button class="mat-button mat-primary" (click)="close()">Awesome!</button>
+</mat-dialog-actions>

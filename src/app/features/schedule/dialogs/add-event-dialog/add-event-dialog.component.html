@@ -1,3 +1,29 @@
-<p>
-  add-event-dialog works!
-</p>
+<h2 mat-dialog-title><i class="fas fa-calendar-check"></i> Add Event</h2>
+
+<mat-dialog-content>
+  <p class="suggestion-message">
+    Are you are host or organizer and we forgot about you? Haven't found some cool event below? Suggest it here!
+  </p>
+
+  <form class="add-event-form">
+    <mat-form-field>
+      <input type="email" matInput placeholder="Your Email (optional)" value="" />
+      <mat-icon matSuffix>alternate_email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Event Name" value="" required />
+      <mat-icon matSuffix>event_note</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Event Web Link" value="" required />
+      <mat-icon matSuffix>public</mat-icon>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button class="mat-button" (click)="close()">Close</button>
+  <button mat-button class="mat-button mat-primary done-button"><i class="fas fa-check"></i> Done</button>
+</mat-dialog-actions>

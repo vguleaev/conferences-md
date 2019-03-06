@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-add-event-dialog',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-event-dialog.component.scss']
 })
 export class AddEventDialogComponent implements OnInit {
-  constructor() {}
+  constructor(private dialogRef: MatDialogRef<AddEventDialogComponent>) {}
 
   public ngOnInit() {}
+
+  public close() {
+    this.dialogRef.close(false);
+  }
 }

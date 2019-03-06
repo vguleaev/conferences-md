@@ -1,11 +1,11 @@
 @import 'theme/colors';
-@import 'theme/global';
 @import '~@angular-mdc/theme/material';
-
 @import 'theme/theme-variables';
 @import '~@angular/material/theming';
 @include mat-core();
 @include angular-material-theme($app-theme);
+
+@import 'theme/global';
 
 html,
 body {

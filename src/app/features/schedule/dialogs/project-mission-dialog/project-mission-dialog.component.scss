@@ -1,0 +1,30 @@
+.bold {
+  font-weight: 900;
+}
+
+.divider {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.mat-dialog-title {
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 10px;
+}
+
+.mission-message {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  color: #0c88ee;
+  margin-bottom: 20px;
+  font-weight: 700;
+
+  p {
+    margin-right: 5px;
+  }
+}
+
+.github-logo {
+  margin-right: 5px;
+}

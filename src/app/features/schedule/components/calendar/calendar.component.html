@@ -14,7 +14,12 @@
       <div class="month">
         <div *ngFor="let event of month.events" class="event" (click)="onClickEvent(event)">
           <h4 class="event-name">{{ event.name }}</h4>
-          <p class="event-date">{{ event.date }}</p>
+          <div class="event-description">
+            <p class="event-date">{{ event.date }}</p>
+            <mat-chip-list>
+              <mat-chip>{{ event.type }}</mat-chip>
+            </mat-chip-list>
+          </div>
         </div>
       </div>
     </div>

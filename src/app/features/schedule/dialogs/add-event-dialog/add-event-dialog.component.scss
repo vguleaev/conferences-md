@@ -1,0 +1,21 @@
+.mat-dialog-title {
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 10px;
+}
+
+.add-event-form {
+  mat-form-field {
+    display: block;
+  }
+}
+
+.suggestion-message {
+  background: #f6d59a87;
+  padding: 15px;
+}
+
+.done-button {
+  i {
+    font-size: 20px;
+  }
+}

@@ -41,6 +41,13 @@
         margin: 0px;
         color: #3a3a3a;
         font-weight: 400;
+        margin-bottom: 5px;
+      }
+
+      .event-description {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
       }
 
       .event-date {
@@ -62,6 +69,14 @@
     .month {
       grid-template-columns: 100%;
     }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .calendar-card {
+    padding: 1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 

@@ -1,0 +1,36 @@
+.mat-dialog-title {
+  font-family: 'Monserat', 'Roboto' sans-serif;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.event-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  background: #00000012;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .event-header {
+    background-position: center;
+    background-image: url(http://www.availableideas.com/wp-content/uploads/2016/10/Colorful-Polygonal-Render-iPhone-6-Plus-HD-Wallpaper.jpg);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.open-web-link {
+  i {
+    margin-right: 5px;
+  }
+}

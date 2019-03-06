@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-project-mission-dialog',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-mission-dialog.component.scss']
 })
 export class ProjectMissionDialogComponent implements OnInit {
-  constructor() {}
+  constructor(private dialogRef: MatDialogRef<ProjectMissionDialogComponent>) {}
 
   public ngOnInit() {}
+
+  public close() {
+    this.dialogRef.close(false);
+  }
 }
