@@ -18,8 +18,8 @@
 <!-- <mat-divider></mat-divider> -->
 
 <mat-dialog-actions>
+  <button mat-button class="mat-button mat-primary" (click)="close()">GOT IT</button>
   <a class="mat-button mat-flat-button mat-primary open-web-link" *ngIf="event.link" [href]="event.link" target="_blank" mat-button>
     <i class="fas fa-globe"></i> Open in Web</a
   >
-  <button mat-button class="mat-button mat-primary" (click)="close()">GOT IT</button>
 </mat-dialog-actions>
