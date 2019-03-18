@@ -3,7 +3,9 @@ import { of, Observable, pipe } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { delay, map } from 'rxjs/operators';
 import { DateFormatHelper } from 'src/app/utils/date-format-helper';
-import { months } from 'moment';
+import { CalendarMonth } from './../../shared/models/calendar-month.model';
+import { EventDto } from 'src/app/shared/models/event.model';
+import { CalendarEvent } from 'src/app/shared/models/calendar-event.model';
 
 @Injectable()
 export class EventsService {
@@ -11,21 +13,23 @@ export class EventsService {
 
   constructor(private http: HttpClient) {}
 
-  public get(): Observable<any> {
+  public get(): Observable<CalendarMonth[]> {
     return this.http.get(this.apiEndpoint).pipe(
-      map((events: any) => {
+      map((events: EventDto[]) => {
         events.sort((a, b) => {
           return a.date._seconds - b.date._seconds;
         });
 
-        const groupedEvents = [];
+        const eventsGroupedByMonth: CalendarMonth[] = [];
 
-        events.forEach(event => {
-          const result: any = {};
-
-          result.name = event.name;
-          result.link = event.link;
-          result.type = event.type === 'conference' ? 'Conference' : 'Other';
+        events.forEach((event: EventDto) => {
+          const result: CalendarEvent = {
+            _id: event._id,
+            name: event.name,
+            link: event.link,
+            type: event.type,
+            date: ''
+          };
 
           const isDateRange = !!event.dateEnd;
           const momentDate = DateFormatHelper.convertUnixTimestampToMoment(event.date._seconds);
@@ -43,16 +47,16 @@ export class EventsService {
 
           const monthName = `${momentDate.format('MMMM')} ${momentDate.year()}`;
 
-          const month = groupedEvents.find(m => m.name === monthName);
+          const month = eventsGroupedByMonth.find(m => m.name === monthName);
 
           if (month && month.events) {
             month.events.push(result);
           } else {
-            groupedEvents.push({ name: monthName, events: [result] });
+            eventsGroupedByMonth.push({ name: monthName, events: [result] });
           }
         });
 
-        return groupedEvents;
+        return eventsGroupedByMonth;
       })
     );
   }

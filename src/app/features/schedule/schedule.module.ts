@@ -13,6 +13,7 @@ import { ContactUsDialogComponent } from './dialogs/contact-us-dialog/contact-us
 import { ProjectMissionDialogComponent } from './dialogs/project-mission-dialog/project-mission-dialog.component';
 import { AddEventDialogComponent } from './dialogs/add-event-dialog/add-event-dialog.component';
 import { EventDetailsDialogComponent } from './dialogs/event-details-dialog/event-details-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { EventDetailsDialogComponent } from './dialogs/event-details-dialog/even
     AddEventDialogComponent,
     EventDetailsDialogComponent
   ],
-  imports: [CommonModule, ScheduleRoutingModule, MaterialModule, AngularMaterialModule, SharedModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, ScheduleRoutingModule, MaterialModule, AngularMaterialModule, SharedModule],
   entryComponents: [ContactUsDialogComponent, ProjectMissionDialogComponent, AddEventDialogComponent, EventDetailsDialogComponent]
 })
 export class ScheduleModule {}
