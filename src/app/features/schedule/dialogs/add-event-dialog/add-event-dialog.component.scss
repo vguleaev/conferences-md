@@ -4,6 +4,8 @@
 }
 
 .add-event-form {
+  padding: 10px 0;
+
   mat-form-field {
     display: block;
   }
@@ -12,9 +14,12 @@
 .suggestion-message {
   background: rgba(246, 213, 154, 0.53);
   padding: 15px;
+  margin: 0px;
 }
 
 .done-button {
+  margin-right: 10px;
+
   i {
     font-size: 20px;
   }

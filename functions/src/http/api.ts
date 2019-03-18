@@ -8,13 +8,6 @@ const app = express();
 
 app.use(cors({ origin: true }));
 
-app.get('/cat', (request, response) => {
-  response.send('cat');
-});
-app.get('/dog', (request, response) => {
-  response.send('dog');
-});
-
 app.get('/events', (request, response) => {
   const db = admin.firestore();
 

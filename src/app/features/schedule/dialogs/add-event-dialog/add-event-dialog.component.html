@@ -5,25 +5,33 @@
     Are you a host or organizer and we forgot about you? Haven't found some cool event below? Suggest it here!
   </p>
 
-  <form class="add-event-form">
+  <form class="add-event-form" [formGroup]="form" (ngSubmit)="submit()">
     <mat-form-field>
-      <input type="email" matInput placeholder="Your Email (optional)" value="" />
+      <input type="email" matInput formControlName="email" placeholder="Your Email (optional)" value="" />
       <mat-icon matSuffix>alternate_email</mat-icon>
+      <mat-error *ngIf="form.controls.email.hasError('email')"> Email is invalid </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Event Name" value="" required />
+      <input matInput placeholder="Event Name" formControlName="eventName" required />
       <mat-icon matSuffix>event_note</mat-icon>
+      <mat-error *ngIf="form.controls.eventName.hasError('required')"> Event Name is required </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Event Web Link" value="" required />
+      <input matInput placeholder="Event Web Link" formControlName="eventLink" required />
       <mat-icon matSuffix>public</mat-icon>
+      <mat-error *ngIf="form.controls.eventLink.hasError('required')"> Event Link is required </mat-error>
     </mat-form-field>
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions>
   <button mat-button class="mat-button" (click)="close()">Close</button>
-  <button mat-button class="mat-button mat-primary done-button"><i class="fas fa-check"></i> Done</button>
+  <button mat-button class="mat-button mat-primary done-button" [disabled]="isLoading" (click)="submit()">
+    <i class="fas fa-check"></i> Done
+  </button>
+  <div class="loader" *ngIf="isLoading">
+    <mat-progress-spinner mode="indeterminate" [diameter]="35" strokeWidth="5"> </mat-progress-spinner>
+  </div>
 </mat-dialog-actions>
