@@ -1,11 +1,12 @@
 import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventsService } from './services/events.service';
+import { MailService } from './services/mail.service';
 
 @NgModule({
   declarations: [],
   imports: [CommonModule],
-  providers: [EventsService]
+  providers: [EventsService, MailService]
 })
 export class CoreModule {
   constructor(

@@ -3,6 +3,8 @@ import { MatDialogRef } from '@angular/material';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReplaySubject } from 'rxjs';
 import { FormValidationHelper } from 'src/app/utils/form-validation-helper';
+import { MailService } from './../../../../core/services/mail.service';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact-us-dialog',
@@ -18,7 +20,7 @@ export class ContactUsDialogComponent implements OnInit, OnDestroy {
   });
 
   private destroy: ReplaySubject<any> = new ReplaySubject<any>(1);
-  constructor(private dialogRef: MatDialogRef<ContactUsDialogComponent>) {}
+  constructor(private dialogRef: MatDialogRef<ContactUsDialogComponent>, private emailService: MailService) {}
 
   public ngOnInit() {}
 
@@ -33,6 +35,21 @@ export class ContactUsDialogComponent implements OnInit, OnDestroy {
     }
 
     this.isLoading = true;
+
+    this.emailService
+      .sendContactMail(this.form.value)
+      .pipe(takeUntil(this.destroy))
+      .subscribe(
+        success => {
+          this.isLoading = false;
+          this.close();
+          //alert('Thank you!');
+        },
+        error => {
+          this.isLoading = false;
+          alert('We are sorry, but something failed!');
+        }
+      );
   }
 
   public ngOnDestroy() {

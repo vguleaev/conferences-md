@@ -9,12 +9,12 @@ import { CalendarEvent } from 'src/app/shared/models/calendar-event.model';
 
 @Injectable()
 export class EventsService {
-  private apiEndpoint = 'https://us-central1-conferences-md.cloudfunctions.net/api/events';
+  private apiEndpoint = 'https://us-central1-conferences-md.cloudfunctions.net/api';
 
   constructor(private http: HttpClient) {}
 
   public get(): Observable<CalendarMonth[]> {
-    return this.http.get(this.apiEndpoint).pipe(
+    return this.http.get(this.apiEndpoint + '/events').pipe(
       map((events: EventDto[]) => {
         events.sort((a, b) => {
           return a.date._seconds - b.date._seconds;
@@ -28,6 +28,7 @@ export class EventsService {
             name: event.name,
             link: event.link,
             type: event.type,
+            description: event.description,
             date: ''
           };
 
@@ -59,5 +60,9 @@ export class EventsService {
         return eventsGroupedByMonth;
       })
     );
+  }
+
+  public suggestEvent(suggestion: { eventName: string; email: string; eventLink: string }): Observable<any> {
+    return this.http.post(this.apiEndpoint + '/suggest', suggestion);
   }
 }

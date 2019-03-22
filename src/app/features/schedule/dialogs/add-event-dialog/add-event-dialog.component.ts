@@ -3,6 +3,8 @@ import { MatDialogRef } from '@angular/material';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReplaySubject } from 'rxjs';
 import { FormValidationHelper } from 'src/app/utils/form-validation-helper';
+import { takeUntil } from 'rxjs/operators';
+import { EventsService } from 'src/app/core/services/events.service';
 
 @Component({
   selector: 'app-add-event-dialog',
@@ -18,7 +20,7 @@ export class AddEventDialogComponent implements OnInit, OnDestroy {
   });
 
   private destroy: ReplaySubject<any> = new ReplaySubject<any>(1);
-  constructor(private dialogRef: MatDialogRef<AddEventDialogComponent>) {}
+  constructor(private dialogRef: MatDialogRef<AddEventDialogComponent>, private eventService: EventsService) {}
 
   public ngOnInit() {}
 
@@ -33,6 +35,21 @@ export class AddEventDialogComponent implements OnInit, OnDestroy {
     }
 
     this.isLoading = true;
+
+    this.eventService
+      .suggestEvent(this.form.value)
+      .pipe(takeUntil(this.destroy))
+      .subscribe(
+        success => {
+          this.isLoading = false;
+          this.close();
+          //alert('Thank you!');
+        },
+        error => {
+          this.isLoading = false;
+          alert('We are sorry, but something failed!');
+        }
+      );
   }
 
   public ngOnDestroy() {

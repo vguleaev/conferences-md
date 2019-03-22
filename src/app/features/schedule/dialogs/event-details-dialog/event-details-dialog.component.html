@@ -11,11 +11,9 @@
     </mat-chip-list>
   </div>
 
-  <h4>Description:</h4>
-  <p>Some basic event description goes here as very very long text.</p>
+  <h4 *ngIf="event.description">Description:</h4>
+  <p>{{ event.description }}</p>
 </mat-dialog-content>
-
-<!-- <mat-divider></mat-divider> -->
 
 <mat-dialog-actions>
   <button mat-button class="mat-button mat-primary" (click)="close()">GOT IT</button>
