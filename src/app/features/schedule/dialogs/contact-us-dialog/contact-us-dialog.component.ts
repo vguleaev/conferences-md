@@ -5,6 +5,7 @@ import { ReplaySubject } from 'rxjs';
 import { FormValidationHelper } from 'src/app/utils/form-validation-helper';
 import { MailService } from './../../../../core/services/mail.service';
 import { takeUntil } from 'rxjs/operators';
+import { ToastNotificationService } from 'src/app/core/services/toast-notification.service';
 
 @Component({
   selector: 'app-contact-us-dialog',
@@ -20,7 +21,11 @@ export class ContactUsDialogComponent implements OnInit, OnDestroy {
   });
 
   private destroy: ReplaySubject<any> = new ReplaySubject<any>(1);
-  constructor(private dialogRef: MatDialogRef<ContactUsDialogComponent>, private emailService: MailService) {}
+  constructor(
+    private dialogRef: MatDialogRef<ContactUsDialogComponent>,
+    private emailService: MailService,
+    private notificationService: ToastNotificationService
+  ) {}
 
   public ngOnInit() {}
 
@@ -43,7 +48,7 @@ export class ContactUsDialogComponent implements OnInit, OnDestroy {
         success => {
           this.isLoading = false;
           this.close();
-          //alert('Thank you!');
+          this.notificationService.notify('Thank you!');
         },
         error => {
           this.isLoading = false;

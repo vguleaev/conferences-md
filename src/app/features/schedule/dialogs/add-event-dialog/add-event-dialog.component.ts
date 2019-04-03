@@ -5,6 +5,7 @@ import { ReplaySubject } from 'rxjs';
 import { FormValidationHelper } from 'src/app/utils/form-validation-helper';
 import { takeUntil } from 'rxjs/operators';
 import { EventsService } from 'src/app/core/services/events.service';
+import { ToastNotificationService } from 'src/app/core/services/toast-notification.service';
 
 @Component({
   selector: 'app-add-event-dialog',
@@ -20,7 +21,11 @@ export class AddEventDialogComponent implements OnInit, OnDestroy {
   });
 
   private destroy: ReplaySubject<any> = new ReplaySubject<any>(1);
-  constructor(private dialogRef: MatDialogRef<AddEventDialogComponent>, private eventService: EventsService) {}
+  constructor(
+    private dialogRef: MatDialogRef<AddEventDialogComponent>,
+    private eventService: EventsService,
+    private notificationService: ToastNotificationService
+  ) {}
 
   public ngOnInit() {}
 
@@ -43,7 +48,7 @@ export class AddEventDialogComponent implements OnInit, OnDestroy {
         success => {
           this.isLoading = false;
           this.close();
-          //alert('Thank you!');
+          this.notificationService.notify('Thank you!');
         },
         error => {
           this.isLoading = false;
