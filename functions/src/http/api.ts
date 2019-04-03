@@ -4,6 +4,7 @@ admin.initializeApp();
 
 import * as express from 'express';
 import * as cors from 'cors';
+import * as moment from 'moment';
 import { MailService } from './../services/mail-service';
 import { EnvironmentVariables } from '../models/environment-variables';
 
@@ -13,8 +14,13 @@ app.use(cors({ origin: true }));
 
 app.get('/events', (request, response) => {
   const db = admin.firestore();
+  const today = new Date();
+  const yesterday = moment(today)
+    .subtract(1, 'days')
+    .toDate();
 
   db.collection('events')
+    .where('date', '>', yesterday)
     .get()
     .then(snapshot => {
       const result: any[] = [];
